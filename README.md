@@ -17,15 +17,24 @@
 *   **Интерактивные карточки проектов:** Каждый проект можно "развернуть", нажав на карточку, чтобы увидеть подробное описание.
 *   **Интеграция с внешними сервисами:** Ссылка на песню, созданную с помощью Suno AI, демонстрирует творческий подход.
 
-## 🛠️ Технологии
+## 🛠️ Технологии и навыки
 
-Сайт построен с использованием современных веб-технологий:
+Вот мой основной стек технологий, которые я использую в разработке и преподавании:
 
-*   **HTML5:** Семантическая структура страницы.
-*   **CSS3:** Стилизация с использованием CSS-переменных, Flexbox, Grid и анимаций. Реализована поддержка тёмной темы без использования JavaScript-фреймворков.
-*   **JavaScript (нативный):** Обеспечивает интерактивность: раскрытие карточек проектов, переключение тем и сохранение выбранной темы в `localStorage`.
-*   **Font Awesome:** Иконки для визуального оформления.
-*   **Google Fonts:** Шрифт Inter для современного и читаемого текста.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
+![PyGame](https://img.shields.io/badge/PyGame-3776AB?style=for-the-badge&logo=python&logoColor=white)
+
+А также работаю с:
+- **Aiogram** — создание Telegram-ботов
+- **REST API** — интеграция с внешними сервисами
+- **Адаптивная вёрстка** — кросс-браузерная и мобильная разработка
 
 ## 🚀 Мои проекты, представленные на сайте
 
