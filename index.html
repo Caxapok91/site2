@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио · Андрей · учитель в Itmouse</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(145deg, #f6f9fc 0%, #eaf0f6 100%);
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.4s ease, color 0.3s ease;
+        }
+
+        /* Тёмная тема */
+        body.dark-theme {
+            background: #0f172a;
+            color: #e2e8f0;
+        }
+
+        body.dark-theme .card {
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
+        }
+
+        body.dark-theme .badge {
+            background: #1e293b;
+            color: #60a5fa;
+            border-color: rgba(96, 165, 250, 0.2);
+        }
+
+        body.dark-theme .hero-content h1 span {
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        body.dark-theme .hero-sub {
+            color: #94a3b8;
+        }
+
+        body.dark-theme .hero-desc {
+            color: #cbd5e1;
+        }
+
+        body.dark-theme .social-links a {
+            background: #1e293b;
+            color: #e2e8f0;
+            border-color: #334155;
+        }
+
+        body.dark-theme .social-links a i {
+            color: #60a5fa;
+        }
+
+        body.dark-theme .social-links a:hover {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+
+        body.dark-theme .social-links a:hover i {
+            color: white;
+        }
+
+        body.dark-theme .avatar {
+            background: #1e293b;
+            border-color: #334155;
+            box-shadow: 0 15px 30px -10px rgba(37, 99, 235, 0.2);
+        }
+
+        body.dark-theme .skill-tag {
+            background: #1e293b;
+            border-color: #334155;
+            color: #e2e8f0;
+        }
+
+        body.dark-theme .skill-tag i {
+            color: #60a5fa;
+        }
+
+        body.dark-theme .skill-tag:hover {
+            border-color: #60a5fa;
+            background: #1e293b;
+        }
+
+        body.dark-theme .project-card {
+            background: #1e293b;
+            border-color: #334155;
+        }
+
+        body.dark-theme .project-card p {
+            color: #94a3b8;
+        }
+
+        body.dark-theme .project-tag {
+            background: #1e293b;
+            color: #60a5fa;
+            border-color: #334155;
+        }
+
+        body.dark-theme .contact {
+            border-top-color: #334155;
+        }
+
+        body.dark-theme .contact-item {
+            color: #e2e8f0;
+        }
+
+        body.dark-theme .contact-item i {
+            color: #60a5fa;
+        }
+
+        body.dark-theme .contact-item:hover {
+            color: #60a5fa;
+        }
+
+        body.dark-theme .copy {
+            color: #94a3b8;
+        }
+
+        body.dark-theme .theme-toggle {
+            background: #1e293b;
+            color: #fbbf24;
+            border-color: #334155;
+        }
+
+        body.dark-theme .theme-toggle:hover {
+            background: #334155;
+        }
+
+        .card {
+            max-width: 1100px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 3.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.5);
+            padding: 2.8rem 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        /* header / hero */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 3.2rem;
+            gap: 1.8rem;
+        }
+
+        .hero-content {
+            flex: 1 1 280px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #2563eb;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.3px;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            margin-bottom: 0.8rem;
+            border: 1px solid rgba(37, 99, 235, 0.15);
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .hero-sub {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #475569;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            transition: color 0.3s ease;
+        }
+
+        .hero-sub i {
+            color: #2563eb;
+            font-size: 1.1rem;
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            color: #334155;
+            max-width: 450px;
+            margin-bottom: 1.6rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #1e293b;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+
+        .social-links a i {
+            color: #2563eb;
+            font-size: 1rem;
+        }
+
+        .social-links a:hover {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px -10px rgba(37, 99, 235, 0.2);
+        }
+
+        .social-links a:hover i {
+            color: white;
+        }
+
+        .avatar {
+            flex: 0 0 130px;
+            height: 130px;
+            background: linear-gradient(135deg, #2563eb20, #7c3aed20);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid white;
+            box-shadow: 0 15px 30px -10px rgba(37, 99, 235, 0.15);
+            font-size: 4.2rem;
+            font-weight: 600;
+            color: #2563eb;
+            background-color: #f1f5f9;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* секция навыков */
+        .skills {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            margin-bottom: 1.6rem;
+        }
+
+        .section-title i {
+            color: #2563eb;
+            font-size: 1.6rem;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1rem;
+        }
+
+        .skill-tag {
+            background: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            border: 1px solid #e9edf2;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.15s;
+        }
+
+        .skill-tag i {
+            color: #2563eb;
+            font-size: 0.9rem;
+        }
+
+        .skill-tag:hover {
+            border-color: #2563eb;
+            background: #f8faff;
+            transform: scale(1.02);
+        }
+
+        /* проекты */
+        .projects {
+            margin-bottom: 2.8rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .project-card {
+            background: white;
+            padding: 1.6rem 1.4rem;
+            border-radius: 2rem;
+            border: 1px solid #eef2f6;
+            transition: all 0.25s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: #b9d0fd;
+            box-shadow: 0 20px 30px -12px rgba(37, 99, 235, 0.08);
+        }
+
+        .project-card.expanded {
+            grid-column: 1 / -1;
+            transform: scale(1.02);
+            border-color: #2563eb;
+            box-shadow: 0 25px 40px -12px rgba(37, 99, 235, 0.15);
+        }
+
+        .project-card .project-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, margin 0.3s ease;
+            opacity: 0;
+        }
+
+        .project-card.expanded .project-details {
+            max-height: 600px;
+            opacity: 1;
+            margin-top: 0.8rem;
+        }
+
+        .project-card .expand-hint {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin-top: 0.5rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .project-card.expanded .expand-hint {
+            color: #2563eb;
+        }
+
+        .project-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #2563eb;
+        }
+
+        .project-card h3 {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .project-card p {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: #eef2ff;
+            color: #2563eb;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            letter-spacing: 0.2px;
+            border: 1px solid #dbeafe;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .project-card .project-details .song-lyrics {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 0.8rem 1rem;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            max-height: 200px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            border: 1px solid #e2e8f0;
+        }
+
+        body.dark-theme .project-card .project-details .song-lyrics {
+            background: #0f172a;
+            color: #e2e8f0;
+            border-color: #334155;
+        }
+
+        .project-card .project-details .song-link {
+            display: inline-block;
+            margin-top: 0.6rem;
+            padding: 0.3rem 1rem;
+            background: #2563eb;
+            color: white;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .project-card .project-details .song-link:hover {
+            background: #1d4ed8;
+        }
+
+        .project-card .project-details .cat-image {
+            margin-top: 0.8rem;
+            border-radius: 16px;
+            overflow: hidden;
+            max-width: 100%;
+            border: 2px solid #e2e8f0;
+            transition: border-color 0.3s ease;
+        }
+
+        .project-card .project-details .cat-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 200px;
+            object-fit: cover;
+        }
+
+        body.dark-theme .project-card .project-details .cat-image {
+            border-color: #334155;
+        }
+
+        /* контакты / футер */
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-left {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1.8rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #1e293b;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-item i {
+            color: #2563eb;
+            font-size: 1.2rem;
+            width: 1.6rem;
+            text-align: center;
+        }
+
+        .contact-item:hover {
+            color: #2563eb;
+        }
+
+        .copy {
+            font-size: 0.9rem;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.3s ease;
+        }
+
+        .copy i {
+            color: #94a3b8;
+        }
+
+        /* Кнопка смены темы */
+        .theme-toggle {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.8rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 40px;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #1e293b;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            z-index: 10;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .theme-toggle i {
+            font-size: 1.1rem;
+        }
+
+        body.dark-theme .theme-toggle {
+            background: #1e293b;
+            color: #fbbf24;
+            border-color: #334155;
+        }
+
+        body.dark-theme .theme-toggle:hover {
+            background: #334155;
+        }
+
+        /* адаптив */
+        @media (max-width: 700px) {
+            .card {
+                padding: 2rem 1.5rem;
+                border-radius: 2.4rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .avatar {
+                flex: 0 0 100px;
+                height: 100px;
+                font-size: 3.2rem;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                align-items: start;
+            }
+
+            .contact {
+                flex-direction: column;
+                align-items: start;
+                gap: 0.8rem;
+            }
+
+            .contact-left {
+                flex-direction: column;
+                align-items: start;
+                gap: 0.5rem;
+            }
+
+            .social-links a {
+                padding: 0.4rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .theme-toggle {
+                top: 1rem;
+                right: 1rem;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .card {
+                padding: 1.5rem 1rem;
+            }
+            .hero-content h1 {
+                font-size: 1.9rem;
+            }
+            .theme-toggle span {
+                display: none;
+            }
+        }
+
+        .fa-regular, .fa-solid, .fab {
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <main class="card" role="main">
+
+        <!-- Кнопка смены темы -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+            <i class="fas fa-moon"></i>
+            <span>Тёмная</span>
+        </button>
+
+        <!-- HERO -->
+        <div class="hero">
+            <div class="hero-content">
+                <div class="badge">
+                    <i class="fas fa-chalkboard-teacher" style="margin-right: 6px;"></i> учитель в Itmouse
+                </div>
+                <h1>
+                    Привет, я <span>Андрей</span>
+                </h1>
+                <div class="hero-sub">
+                    <i class="fas fa-calendar-alt"></i> 34 годика · наставник и разработчик
+                </div>
+                <p class="hero-desc">
+                    Преподаю программирование в <strong>Itmouse</strong>, помогаю детям и взрослым 
+                    освоить Python, веб-разработку и алгоритмы. В свободное время создаю 
+                    пет-проекты и игры.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i> Telegram</a>
+                    <a href="#" aria-label="VK"><i class="fab fa-vk"></i> VK</a>
+                    <a href="#" aria-label="Codewars"><i class="fas fa-code"></i> Codewars</a>
+                </div>
+            </div>
+            <div class="avatar">
+                <img src="cat.png" alt="Котик" onerror="this.style.display='none'; this.parentElement.textContent='🧑‍🏫';">
+            </div>
+        </div>
+
+        <!-- НАВЫКИ -->
+        <section class="skills">
+            <div class="section-title">
+                <i class="fas fa-laptop-code"></i>
+                <span>Мои навыки</span>
+            </div>
+            <div class="skills-grid">
+                <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+                <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+                <span class="skill-tag"><i class="fab fa-html5"></i> HTML5</span>
+                <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+                <span class="skill-tag"><i class="fas fa-database"></i> SQL</span>
+                <span class="skill-tag"><i class="fas fa-robot"></i> Telegram Bot</span>
+                <span class="skill-tag"><i class="fas fa-gamepad"></i> PyGame</span>
+                <span class="skill-tag"><i class="fas fa-git-alt"></i> Git</span>
+                <span class="skill-tag"><i class="fas fa-flask"></i> Flask</span>
+            </div>
+        </section>
+
+        <!-- ПРОЕКТЫ -->
+        <section class="projects">
+            <div class="section-title">
+                <i class="fas fa-folder-open"></i>
+                <span>Мои проекты</span>
+                <span style="font-size: 0.8rem; font-weight: 400; color: #94a3b8; margin-left: 0.5rem;">(нажми на карточку)</span>
+            </div>
+            <div class="project-grid" id="projectGrid">
+                <div class="project-card" data-project="game">
+                    <div class="project-icon">🎮</div>
+                    <h3>Космические рейнджеры</h3>
+                    <p>Игра на PyGame с уровнями и боссами.</p>
+                    <span class="project-tag">Python · PyGame</span>
+                    <div class="project-details">
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                            <strong>Подробнее:</strong> Управление кораблём, стрельба, система очков, 
+                            5 уровней сложности. Реализована физика и анимация спрайтов.
+                        </p>
+                    </div>
+                    <div class="expand-hint"><i class="fas fa-chevron-down"></i> нажми, чтобы раскрыть</div>
+                </div>
+
+                <div class="project-card" data-project="bot">
+                    <div class="project-icon">🤖</div>
+                    <h3>Умный помощник</h3>
+                    <p>Telegram-бот на Python с расписанием и погодой.</p>
+                    <span class="project-tag">Python · aiogram</span>
+                    <div class="project-details">
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                            <strong>Подробнее:</strong> Интеграция с OpenWeatherMap, Google Calendar API, 
+                            встроенные викторины и напоминания. Бот обрабатывает до 100 запросов в день.
+                        </p>
+                    </div>
+                    <div class="expand-hint"><i class="fas fa-chevron-down"></i> нажми, чтобы раскрыть</div>
+                </div>
+
+                <div class="project-card" data-project="site">
+                    <div class="project-icon">🌐</div>
+                    <h3>Сайт-портфолио</h3>
+                    <p>Этот сайт — мой личный проект.</p>
+                    <span class="project-tag">HTML · CSS · JS</span>
+                    <div class="project-details">
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                            <strong>Подробнее:</strong> Адаптивный дизайн, тёмная тема, анимации, 
+                            интерактивные карточки. В планах — добавить блог и обратную связь.
+                        </p>
+                    </div>
+                    <div class="expand-hint"><i class="fas fa-chevron-down"></i> нажми, чтобы раскрыть</div>
+                </div>
+
+                <div class="project-card" data-project="ai">
+                    <div class="project-icon">🧠</div>
+                    <h3>Интенсив по ИИ</h3>
+                    <p>Провёл интенсив для начинающих.</p>
+                    <span class="project-tag">Python · OpenAI · AI</span>
+                    <div class="project-details">
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                            <strong>Подробнее:</strong> Основы нейросетей, работа с OpenAI API, 
+                            создание чат-бота с памятью и контекстом. Участники создали своих 
+                            первых ИИ-помощников.
+                        </p>
+                    </div>
+                    <div class="expand-hint"><i class="fas fa-chevron-down"></i> нажми, чтобы раскрыть</div>
+                </div>
+
+                <!-- Карточка с песней Suno AI и картинкой котика -->
+                <div class="project-card" data-project="suno">
+                    <div class="project-icon">🎵</div>
+                    <h3>Колбасные половинки</h3>
+                    <p>Песня, созданная в Suno AI.</p>
+                    <span class="project-tag">Suno AI · Творчество</span>
+                    <div class="project-details">
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                            <strong>О песне:</strong> Забавная история о коте, псе и колбасе. Энергичный аккордеон и панк-ритм.
+                        </p>
+                        <div class="cat-image">
+                            <img src="cat.png" alt="Котик из песни" onerror="this.style.display='none'">
+                        </div>
+                        <div class="song-lyrics">
+                            <strong>🎤 Текст (фрагмент):</strong>
+                            А у бабушки в корзинке — не игрушки, не носки!
+                            Там лежат две половинки вкусной, вкусной колбасы!
+                            Кот налево, пёс направо — разбежались кто куда,
+                            Но на деле кошка с собачкой — лучшие друзья навсегда!
+                            Ой-ёй-ёй!
+                        </div>
+                        <a href="https://suno.com/song/97aecbd9-f53b-4b50-bb0a-e7de130c5603" target="_blank" class="song-link" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt"></i> Слушать на Suno
+                        </a>
+                    </div>
+                    <div class="expand-hint"><i class="fas fa-chevron-down"></i> нажми, чтобы раскрыть</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- КОНТАКТЫ / ФУТЕР -->
+        <div class="contact">
+            <div class="contact-left">
+                <a href="#" class="contact-item" aria-label="Email">
+                    <i class="fas fa-envelope"></i> andrey@itmouse.ru
+                </a>
+                <span class="contact-item" style="cursor: default;">
+                    <i class="fas fa-map-pin"></i> Москва, Россия
+                </span>
+                <a href="#" class="contact-item" aria-label="Телефон">
+                    <i class="fas fa-phone-alt"></i> +7 (999) 123-45-67
+                </a>
+            </div>
+            <div class="copy">
+                <i class="far fa-copyright"></i> 2026 · Андрей
+            </div>
+        </div>
+    </main>
+
+    <script>
+        (function() {
+            'use strict';
+
+            // === 1. РАСКРЫТИЕ КАРТОЧЕК ===
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            projectCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // Переключаем класс expanded на текущей карточке
+                    this.classList.toggle('expanded');
+                    
+                    // Обновляем подсказку
+                    const hint = this.querySelector('.expand-hint');
+                    if (hint) {
+                        if (this.classList.contains('expanded')) {
+                            hint.innerHTML = '<i class="fas fa-chevron-up"></i> свернуть';
+                        } else {
+                            hint.innerHTML = '<i class="fas fa-chevron-down"></i> нажми, чтобы раскрыть';
+                        }
+                    }
+                });
+            });
+
+            // === 2. СМЕНА ТЕМЫ ===
+            const themeToggle = document.getElementById('themeToggle');
+            const body = document.body;
+            
+            // Проверяем сохранённую тему в localStorage
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                body.classList.add('dark-theme');
+                updateThemeButton(true);
+            }
+
+            themeToggle.addEventListener('click', function() {
+                const isDark = body.classList.toggle('dark-theme');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                updateThemeButton(isDark);
+            });
+
+            function updateThemeButton(isDark) {
+                const icon = themeToggle.querySelector('i');
+                const span = themeToggle.querySelector('span');
+                if (isDark) {
+                    icon.className = 'fas fa-sun';
+                    if (span) span.textContent = 'Светлая';
+                } else {
+                    icon.className = 'fas fa-moon';
+                    if (span) span.textContent = 'Тёмная';
+                }
+            }
+
+        })();
+    </script>
+</body>
+</html>
